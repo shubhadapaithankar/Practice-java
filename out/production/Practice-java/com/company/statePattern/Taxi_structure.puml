@@ -1,0 +1,211 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.company.statePattern.Taxi",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_950484093 { 
+   	label=company
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1241353104 { 
+   	label=statePattern
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Crash1954927069[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Crash</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   f16: F16 [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ pilotEjects()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotFlies()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotLands()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotParks()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotTaxis()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+F161954927069[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)F16</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   airborne: Airborne [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   crash: Crash [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   land: Land [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   parked: Parked [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   state: State [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   taxi: Taxi [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Land1954927069[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Land</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   f16: F16 [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ pilotEjects()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotFlies()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotLands()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotParks()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotTaxis()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Parked1954927069[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Parked</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   f16: F16 [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ pilotEjects()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotFlies()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotLands()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotParks()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotTaxis()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Taxi1954927069[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Taxi</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   f16: F16 [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ pilotEjects()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotFlies()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotLands()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotParks()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ pilotTaxis()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+Crash1954927069 -> F161954927069[label="f16
+[0..1]"];
+F161954927069 -> Crash1954927069[label="crash
+[0..1]"];
+F161954927069 -> Land1954927069[label="land
+[0..1]"];
+F161954927069 -> Parked1954927069[label="parked
+[0..1]"];
+F161954927069 -> Taxi1954927069[label="taxi
+[0..1]"];
+Land1954927069 -> F161954927069[label="f16
+[0..1]"];
+Parked1954927069 -> F161954927069[label="f16
+[0..1]"];
+Taxi1954927069 -> Crash1954927069[arrowhead=none];
+Taxi1954927069 -> F161954927069[label="f16
+[0..1]"];
+Taxi1954927069 -> Land1954927069[arrowhead=none];
+Taxi1954927069 -> Parked1954927069[arrowhead=none];
+    
+}
+@enduml
